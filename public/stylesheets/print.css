@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-oct-2018, 20:33:13
+    Author     : Alejandro Celestino Pombo, Sergio Díaz Renedo
+*/
+
+.titulo {
+    font-size: 18px;
+    font-family: helvetica;
+    color: black;
+}
+
+.nombreTarea {
+    font-size: 12px;
+    font-family: helvetica;
+    color: black;
+}
+
+.nombreTarea:before {
+    content: "\2022";
+}
+
+.encabezado {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #ccc;
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+
+}
+.listaDeTareas {
+    font-size: 18px;
+    font-family: Helvética;
+    display: inline;
+}
+.tarea {
+    background-color: #00cc99;
+    border-style: none;
+    font-family: Stencil;
+    margin-top: 5px;
+}
+
+.tareaTachada {
+    color: black;
+    text-decoration: line-through;
+    border-style: none;
+    margin-right: 50px;
+}
+
+.marcarFinalizada {
+    float:right;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.añadirTarea {
+    background-color: #004d39;
+    border-style: double;
+    font-family: Stencil;
+    margin-top: 5px;
+    display: none;
+}
+
+.textboxAñadirTarea {
+    width: 80%;
+    margin-left: 10px;
+}
+.añadirTareaButton {
+    margin-right: 10px;
+    display: none;
+}
+
+.eliminarTareaCompletadaButton{
+    background-color: blue;
+    display: none;
+}
+
+/*
+    Añadir paréntesis en formato unicode al tag
+*/
+
+.tag:before{
+    content: "\ff08";
+}
+.tag:after{
+    content: "\ff09";
+}

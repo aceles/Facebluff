@@ -1,0 +1,86 @@
+<html lang="es">
+    <head>
+        <title>Facebluff</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/print.css" media="print" />
+        <link rel="shortcut icon" href="./images/TODO.png" sizes="16x16">
+        <script src="./javascript/tasks.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="encabezado">
+            <img class="logo" src="./images/TODO.png">
+            <div class="usuario">
+		<table>				
+                    <tr>	
+			<td>
+                            <img class="avatar" src="/imagenUsuario">
+			</td>
+			<td>
+                            <p class="correo"><%= userEmail %></p>
+                            <p><a href="/logout" class="desconectar">Desconectar</a></p>
+			</td>
+                    </tr>
+               </table>
+            </div>   
+        </div>
+        
+        <div class="contenido">
+                <p class="listaDeTareas">Lista de Tareas:</p>
+                <% tareas.forEach(function(tarea) {
+                        if (tarea.Done === 1){ %>
+                            <div class="tareaTachada">
+                                <p class="nombreTarea"> <%= tarea.Text %>
+                                </p>
+                            </div> 
+                         <% }
+                        else {%>
+                            <div class="tarea">
+                                <p class="nombreTarea"> <%= tarea.Text %>
+                                   <% tarea.Tags.forEach(function(tags) {%>
+                                    <span class="tag"> <%= tags %>
+                                    </span> 
+
+                                 <% }); %>
+                                 <a href="/finish/<%= tarea.ID %>"><button class="marcarFinalizada" type="button">Marcar finalizada</button></a>
+                                </p>
+                            </div> 
+                     <% }
+
+                }); %>
+
+            <div class="añadirTarea">
+                    <form action="/addTask" method="post"> 
+                        <div class="fila">
+                            <div class="nombreTextbox">
+                                <label class="labelFormTarea">Texto</label>
+                            </div>
+                            <div class="textBoxes">
+                                <input type="text" class="textboxAñadirTarea" name="datosTarea[Text]" id="formText" placeholder="Nombre de la tarea">
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="nombreTextbox">
+                                <label class="labelFormTarea">Tag</label>
+                            </div>
+                            <div class="textBoxes">
+                                <input type="text" class="textboxAñadirTarea" name="datosTarea[Tag]" id="formTag" placeholder="Tags de la tarea, separados por @">
+                            </div>
+                        </div>
+                        <div class="textBoxes">
+                            <button class="añadirTareaButton" type="submit">Añadir</button>
+                        </div>
+                    </form>            
+            </div> 
+
+            <div class="eliminarTarea">
+                <form action="/deleteCompleted">           
+                        <p>
+                            <a href="/deleteCompleted"><button class="eliminarTareaCompletadaButton" type="submit">Eliminar tareas completadas</button></a>
+                        </p>               
+                </form>
+            </div> 
+        </div>
+    </body>
+</html>

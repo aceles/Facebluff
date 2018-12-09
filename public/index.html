@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>Facebluff</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/print.css" media="print" />
+        <link rel="shortcut icon" href="./images/TODO.png" sizes="16x16">
+        <script src="./javascript/tasks.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="encabezado">
+            <img class="logo" src="./images/TODO.png">
+            <div class="usuario">
+		<table>				
+                    <tr>	
+			<td>
+                            <img class="avatar" src="./images/noAvatar.png">
+			</td>
+			<td>
+                            <p class="correo"><%= usuario %></p>
+                            <p><a href="index.html" class="desconectar">Desconectar</a></p>
+			</td>
+                    </tr>
+               </table>
+            </div>   
+        </div>
+        
+        <div class="contenido">
+            <p class="listaDeTareas">Lista de Tareas:</p>
+            <div class="tarea">
+                <p class="nombreTarea">Preparar práctica AW
+                    <span class="tag">AW</span>
+                    <span class="tag">PRÁCTICA</span>
+                    <button class="marcarFinalizada" type="button">Marcar finalizada</button>
+                </p>
+            </div>           
+            <div class="tareaTachada">
+                <p class="nombreTarea">Mirar fechas congreso</p>
+            </div>
+            <div class="tarea">
+                <p class="nombreTarea">Ir al supermercado
+                    <span class="tag">PERSONAL</span>
+                    <button class="marcarFinalizada" type="button">Marcar finalizada</button>
+                </p>
+            </div>
+            <div class="tarea">
+                <p class="nombreTarea">Mudanza
+                    <span class="tag">PERSONAL</span>
+                    <button class="marcarFinalizada" type="button">Marcar finalizada</button>
+                </p>
+            </div>
+            <div class="añadirTarea">
+                <p>
+                    <input class="textboxAñadirTarea" type="text">
+                    <button class="añadirTareaButton" type="button">Añadir</button>
+                </p>
+            </div> 
+            <div class="eliminarTarea">
+                <p>
+                    <button class="eliminarTareaCompletadaButton" type="button">Eliminar tareas completadas</button>
+                </p>
+            </div> 
+        </div>
+    </body>
+</html>

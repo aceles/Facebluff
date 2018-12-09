@@ -1,0 +1,31 @@
+<html lang="es">
+    <head>
+        <title>Facebluff</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/print.css" media="print" />
+        <link rel="shortcut icon" href="./images/TODO.png" sizes="16x16">
+        <script src="./javascript/tasks.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="encabezado">
+            <img class="logo" src="./images/TODO.png">
+        </div>
+        <div class="contenido">
+            <div class="formLogin">
+                    <form class="form" method="post" action="/login" name="fLogin">
+                        <input type="text" class="name" placeholder="Dirección de correo" name="usuario" required/>
+                        <input type="password" class="pass" placeholder="Contraseña" name="pass" required>
+                        <input type="submit" class="submit" value="Aceptar"/>
+                    </form>  
+                
+                <% if(errorMsg !== null) {%>
+                <div id="logError">
+                    <a class="logError"><%= errorMsg %></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

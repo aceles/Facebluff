@@ -1,0 +1,274 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04-oct-2018, 19:33:01
+    Author     : Alejandro Celestino Pombo, Sergio Díaz Renedo
+*/
+
+/*
+    Código CSS del encabezado, logo y datos de usuario
+*/
+.encabezado {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url(../images/pizarraNegra.jpg);
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.usuario {
+    width: 50%;
+    height: auto;
+    max-width: 80px;
+    max-height: 80px;
+    float: right;
+    margin-right: 150px;
+    margin-top: 20px;
+    color: white;
+}
+
+.desconectar {
+    color: white;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 50%;
+    height: auto;
+    max-width: 150px;
+    max-height: 100px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.avatar {
+    width: auto;
+    height: auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/*
+    Código CSS del cuerpo
+*/
+
+.contenido {
+    background-image: url(../images/school.png);
+    background-repeat: repeat;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100vh;
+    
+}
+
+/*
+    Código CSS de la lista de tareas
+*/
+
+.listaDeTareas {
+    font-size: 18px;
+    font-family: Helvética;
+    display: none;
+}
+
+.tarea {
+    background-color: #00cc99;
+    border-style: double;
+    font-family: Stencil;
+    margin-top: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nombreTarea {
+    color: white;
+    margin-left: 10px;
+}
+
+.tareaTachada {
+    color: white;
+    text-decoration: line-through;
+    margin-left: 10px;
+    background-color: brown;
+    border-style: double;
+    font-family: Stencil;
+    margin-top: 5px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tag {
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    background: blue;
+    padding: 10px;
+    width: 10px;
+    height: 3px;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+.marcarFinalizada {
+    float:right;
+    margin-right: 10px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/*
+    Código CSS de añadir tarea y eliminar tarea completada
+*/
+
+.añadirTarea {
+    background-color: #004d39;
+    border-style: double;
+    font-family: Stencil;
+    margin-top: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.nombreTextbox {
+    float: left;
+    width: 25%;
+    margin-top: 20px;
+}
+
+.labelFormTarea {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.textBoxes {
+    float: left;
+    width: 75%;
+    margin-top: 20px;
+}
+
+.fila:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    nombreTextbox, textBoxes, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.textboxAñadirTarea {
+    width: 40%;
+    margin-left: 10px;
+}
+.añadirTareaButton {
+    float: left;
+    background-color: #00cc99;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.eliminarTarea {
+    font-family: Stencil;
+    margin-top: 5px;
+}
+
+.eliminarTareaCompletadaButton{
+    background-color: grey;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-style: solid;
+    border-color: black;
+    font-family: Stencil;
+    margin-top: 5px;
+}
+
+/* Estilos para login */
+.logError {
+    font-family: 'Open Sans', sans-serif;
+    color:#FF0000;
+    font-size:20px;
+    font-weight:bold;
+}
+
+#logError{
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+
+.formLogin{
+    width:420px;
+    border-radius:15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+    color:white;
+    background-image: url(../images/pizarraNegra.jpg);
+    position:relative;
+    top: 25%;
+    overflow: hidden;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+input[type="submit"]{
+    width:40%;
+    margin-left:30%;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:5px;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#28D2DE), to(#1A878F));
+    background-image: -webkit-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: -moz-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: -o-linear-gradient(#28D2DE 0%, #1A878F 100%);
+    background-image: linear-gradient(#28D2DE 0%, #1A878F 100%);
+    font:14px Oswald;
+    color:#FFF;
+    text-transform:uppercase;
+    text-shadow:#000 0px 1px 5px;
+    border:1px solid #000;
+    opacity:0.7;
+    -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.7);
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,0.7);
+    border-top:1px solid rgba(255,255,255,0.8)!important;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.2)));
+}
+
+input[type="text"], input[type="password"]{
+    width:90%;
+    padding:15px 0px 15px 8px;
+    border-radius:5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    margin-bottom:10px;
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    margin-left:4%;
+}
