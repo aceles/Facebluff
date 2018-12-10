@@ -127,6 +127,28 @@ app.get("/deleteCompleted", function (req, response) {
 
 // Usuarios
 
+app.get('/signup', function(req, response){
+    response.render('signup', {errorMsg : null});
+});
+
+app.post("/signup", function(req, response){
+
+    daoU.isUserCorrect(req.body.usuario, req.body.pass, function(err, userList){
+        if (err !== null) {
+            console.log(err); //Llevar a pantalla de error cuando se tenga  
+        } 
+        else if (userList.length !== 0){ //usuario y passwords correctos
+            req.session.currentUser = req.body.usuario;
+            req.session.errMsg = null;
+            response.redirect("/index");
+        }
+        else {
+            response.render('login', {errorMsg : "Dirección de correo y/o contraseña no válidos."});
+        }
+    });
+    
+});
+
 app.post("/login", function(req, response){
 
     daoU.isUserCorrect(req.body.usuario, req.body.pass, function(err, userList){
