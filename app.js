@@ -1,5 +1,5 @@
 const config = require("./config");
-const DAOTasks = require("./DAOTasks");
+const DAORespuestas = require("./DAORespuestas");
 const DAOUsers = require("./DAOUsers");
 const path = require("path");
 const mysql = require("mysql");
@@ -19,7 +19,7 @@ const MySQLStore = mysqlSession(session);
 const sessionStore = new MySQLStore(config.mysqlConfig);
 
 // Crear instancias DAOs
-const daoT = new DAOTasks(pool);
+const daoR = new DAORespuestas(pool);
 const daoU = new DAOUsers(pool);
 
 // Se incluye el middleware body-parser en la cadena de middleware
@@ -72,7 +72,7 @@ app.get("/", function (req, response) {
 
 app.get("/index", function (req, response) {
 
-    daoT.getAllTasks(response.locals.userEmail, function (err, taskList) {
+    daoR.getAllTasks(response.locals.userEmail, function (err, taskList) {
         if (err !== null) {
             console.log(err); //Llevar a pantalla de error cuando se tenga          
         } else {
@@ -92,7 +92,7 @@ app.post("/addTask", function (req, response) {
     tarea.text = req.body.datosTarea.Text;
     tarea.tags = ((req.body.datosTarea.Tag).trim()).split("@");
     
-    daoT.insertTask(response.locals.userEmail, tarea, function (err, taskList) {
+    daoR.insertTask(response.locals.userEmail, tarea, function (err, taskList) {
         if (err !== null) {
             console.log(err); //Llevar a pantalla de error cuando se tenga  
         } else {
@@ -103,7 +103,7 @@ app.post("/addTask", function (req, response) {
 
 app.get('/finish/:taskID', function (req, response) {
 
-    daoT.markTaskDone(req.params.taskID, function (err, taskList) {
+    daoR.markTaskDone(req.params.taskID, function (err, taskList) {
         if (err !== null)
         {
             console.log(err); //Llevar a pantalla de error cuando se tenga  
@@ -116,7 +116,7 @@ app.get('/finish/:taskID', function (req, response) {
 
 app.get("/deleteCompleted", function (req, response) {
     
-    daoT.deleteCompleted(response.locals.userEmail, function (err, taskList) {
+    daoR.deleteCompleted(response.locals.userEmail, function (err, taskList) {
         if (err !== null) {
             console.log(err); //Llevar a pantalla de error cuando se tenga  
         } else {

@@ -3,7 +3,7 @@
 const mysql = require("mysql");
 const config = require("./config");
 const DAOUsers = require("./DAOUsers");
-const DAOTasks = require("./DAOTasks");
+const DAORespuestas = require("./DAORespuestas");
 
 // Crear el pool de conexiones
 const pool = mysql.createPool({
@@ -14,7 +14,7 @@ const pool = mysql.createPool({
 });
 
 let daoUser = new DAOUsers(pool);
-let daoTask = new DAOTasks(pool);
+let daoTask = new DAORespuestas(pool);
 
 // Definición de las funciones callback
 // Uso de los métodos de las clases DAOUsers y DAOTasks
